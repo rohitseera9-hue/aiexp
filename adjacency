@@ -1,0 +1,31 @@
+# Using a Python dictionary to act as an adjacency list
+graph = {
+    '5': ['3', '7'],
+    '3': ['2', '4'],
+    '7': ['8'],
+    '2': [],
+    '4': ['8'],
+    '8': []
+}
+
+# Set to keep track of visited nodes
+visited = set()
+
+# DFS function
+defdfs(visited, graph, node):
+    # Check if the node is not visited
+if node not in visited:
+        # Print the node
+print(node, end=" ")
+
+        # Mark the node as visited
+visited.add(node)
+
+        # Recur for all adjacent nodes
+forneighbour in graph[node]:
+dfs(visited, graph, neighbour)
+
+# Driver code
+print("Following is the Depth-First Search:")
+dfs(visited, graph, '5')
+
